@@ -222,8 +222,8 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 bindsym $mod+Left exec playerctl previous
-bindsym $mod+Down exec --no-startup-id pactl set-sink-volume 0 -2%
-bindsym $mod+Up exec --no-startup-id pactl set-sink-volume 0 +2%
+bindsym $mod+Down exec --no-startup-id pactl set-sink-volume 1 -2%
+bindsym $mod+Up exec --no-startup-id pactl set-sink-volume 1 +2%
 bindsym $mod+Right exec playerctl next
 
 bindsym $mod+space exec playerctl play-pause

@@ -1,0 +1,18 @@
+#!/bin/bash
+
+case $BLOCK_BUTTON in
+  3) pactl set-sink-mute 1 toggle ;;  # right click, mute/unmute
+  4) pactl set-sink-volume 1 +2% ;; # scroll up, increase
+  5) pactl set-sink-volume 1 -2% ;; # scroll down, decrease
+esac
+
+SINK=$( pactl list short | grep RUNNING | sed -e 's,^\([0-9][0-9]*\)[^0-9].*,\1,' )
+
+MUTE=$( pactl list sinks | grep Mute | awk -v x=$SINK '{if(NR==x+1) print $2}')
+
+if [[ $MUTE == "no" ]]; then
+  pactl list sinks | grep Volume | awk -v x=$SINK '{if(NR==2*x+1) print $5}'
+else
+  echo MUTE
+fi
+
