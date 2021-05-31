@@ -230,9 +230,9 @@ bindsym $mod+space exec playerctl play-pause
 
 exec --no-startup-id feh --randomize --bg-fill ~/Pictures/Wallpapers/*
 
-exec --no-startup-id xmodmap /home/rowan/.Xmodmap
+# exec --no-startup-id xmodmap /home/rowan/.Xmodmap
 
 # enable floating mode for all YAD
-for_window [class="Yad"] floating enable
-for_window [class="Test.py"] floating enable
-for_window [class="electron-hue-color-picker"] floating enable
+# for_window [class="Yad"] floating enable
+# for_window [class="Test.py"] floating enable
+# for_window [class="electron-hue-color-picker"] floating enable
